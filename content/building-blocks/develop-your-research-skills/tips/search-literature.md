@@ -41,22 +41,30 @@ Although there is no exact recipe for an effective search, the following tips wi
 
   - **Narrow and refine your search results**. For instance, filter by year of publication or date range and by source type (e.g. article, book or review).
 
-## Where to search: Google Scholar.
-  Make things easier: use **Google scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
+## Where to search
 
-  - **Useful tips from the search results:**
-    - **Relevant articles and cited by.** In just one click these two options will help you find a broad range of additional relevant literature for your research question.
+### Google Scholar
 
-    - **Citation**. It allows you to download the citation in different styles and formats (e.g., Bibtex, Refworks...) without even having to access the specific document.
+Make things easier: use **Google scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
 
-    - **Linking the access from your institution to Google Scholar**. This allows you to access the resources available from your institution's online library directly. This can be done in 3 simple steps:
+If, for some reason, you cannot access a specific article, paper or book, paste the DOI at [libkey.io](https://libkey.io/) to retrieve the article (you need to login through your institution).
 
-      1- Go to Google Scholar [settings](https://scholar.google.co.uk/scholar_settings)
+{{% tip %}}
 
-      2- Click on the "library links" section and type in the name of your institution in the search box.
+**Useful tips from the search results:**
 
-      3- When the result appears, uncheck any other boxes to which you do not have access to and click on the save button.
+- **Relevant articles and cited by.** In just one click these two options will help you find a broad range of additional relevant literature for your research question.
 
-      Once set, you will see at each result of the search a "Fulltext via [institution search tool]".
+- **Citation**. It allows you to download the citation in different styles and formats (e.g., Bibtex, Refworks...) without even having to access the specific document.
 
-  However, if for some reason you cannot access a specific article, paper or book, through Google Scholar, [libkey.io](https://libkey.io/) will send you directly to the document just by entering the DOI (you need to login through your institution).
+- **Linking the access from your institution to Google Scholar**. This allows you to access the resources available from your institution's online library directly. This can be done in 3 simple steps:
+
+      1. Go to Google Scholar [settings](https://scholar.google.co.uk/scholar_settings)
+
+      2. Click on the "library links" section and type in the name of your institution in the search box.
+
+      3. When the result appears, uncheck any other boxes to which you do not have access to and click on the save button.
+
+Once set, you will see at each result of the search a "Fulltext via [institution search tool]".
+
+{{% /tip %}}
