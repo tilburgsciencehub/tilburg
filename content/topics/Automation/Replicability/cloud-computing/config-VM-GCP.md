@@ -191,7 +191,7 @@ Bear in mind that the particular framework you are using within your project, su
 
 Your Virtual Machine can be monitored, this will be useful especially when the tasks you are running are memory-demanding.
 
-Also, oftentimes you'll be working with large files and you'll need to use the so-called "buckets" to access extra storage. The ways to establish the connection with them might not be that intuitive, but luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/) on the topic!
+Also, oftentimes you'll be working with large files and you'll need to use the so-called "buckets" to access extra storage. The ways to establish the connection with them might not be that intuitive, but luckily for you, you'll learn these and more useful skills in our [next building block](monitor-memory-vm.md) on the topic!
 
 {{% /tip %}}
 
