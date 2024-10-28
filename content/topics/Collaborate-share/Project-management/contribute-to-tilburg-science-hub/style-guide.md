@@ -29,16 +29,18 @@ Please use our [building block templates](https://raw.githubusercontent.com/tilb
 
 Please fork our site, and develop your content in a new branch. When you're done, make a pull request, explain briefly what you've done (and why), and we're going to review your code and add it to the site. -->
 
-### Adding images 
+### Adding images
+
 You can add an image into your building block using html tags, please see an example below
 
 `<p align = "center">
 <img src ="../images/<name-of-your-image>.png" width="400">
+
 </p> `
 
 ### Bear in mind breaks in front of lists
 
-- correct 👍 (additional break before a list) : 
+- correct 👍 (additional break before a list) :
 
 ```
 DiD works well whenever:
@@ -80,50 +82,49 @@ DiD works well whenever:
 
 ### Use tables notations
 
-- Correct 👍 (using $\texttt{table}$ notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign): 
+- Correct 👍 (using $\texttt{table}$ notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign):
 
 {{%table%}}
-|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+| | Before ($Y_i^0$) | After ($Y_i^1$) |
 | --------------- | ---------------------- | ---------------------- |
-| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
-| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+| Control ($D_i = 0$) | $E(Y_i^0 \mid D_i = 0)$ | $E(Y_i^1 \mid D_i = 0)$ |
+| Treatment ($D_i=1$) | $E(Y_i^0 \mid D_i = 0)$ | $E(Y_i^1 \ mid D_i = 1)$ |
 {{%/table%}}
-    
+
 - Incorrect 👎 (NOT using $\texttt{table}$ notation):  
-|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
-| --------------- | ---------------------- | ---------------------- |
-| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
-| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
- 
+  | | Before ($Y_i^0$) | After ($Y_i^1$) |
+  | --------------- | ---------------------- | ---------------------- |
+  | Control ($D_i = 0$) | $E(Y_i^0 \mid D_i = 0)$ | $E(Y_i^1 \mid D_i = 0)$ |
+  | Treatment ($D_i=1$) | $E(Y_i^0 \mid D_i = 0)$ | $E(Y_i^1 \ mid D_i = 1)$ |
+
 ### Each article should have at least a title, description, keywords, weight, date and content
 
 - correct 👍 (all fields are present):
 
   `---
-                      title: "Software Setup Overview"
-                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
-                      keywords: software, setup, guide, configure, configuration"
-                      weight: 4
-                      date: 2021-01-06T22:01:14+05:30
-                      draft: false
-                      ---
-                      Some content below....`
-
+                    title: "Software Setup Overview"
+                    description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                    keywords: software, setup, guide, configure, configuration"
+                    weight: 4
+                    date: 2021-01-06T22:01:14+05:30
+                    draft: false
+                    ---
+                    Some content below....`
 
 - incorrect 👎 (missing some fields):
 
   `---
-                      title: "Software Setup Overview"
-                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
-                      keywords: software, setup, guide, configure, configuration"
-                      ---
-                      Some content below....`
+                    title: "Software Setup Overview"
+                    description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                    keywords: software, setup, guide, configure, configuration"
+                    ---
+                    Some content below....`
 
+### Multiple authors
 
-### Multiple authors 
-When you cooperate with someone on an article, in the author field please insert authors' names separated by coma but **without space** in between 
+When you cooperate with someone on an article, in the author field please insert authors' names separated by coma but **without space** in between
 
-- correct 👍  (no space in between): `Author: Krzysztof Wiesniakowski,Thierry Lahaije`
+- correct 👍 (no space in between): `Author: Krzysztof Wiesniakowski,Thierry Lahaije`
 
 - incorrect 👎 (there is space in between): `Author: Krzysztof Wiesniakowski, Thierry Lahaije`
 
@@ -140,6 +141,7 @@ In addition to the standard way of formatting code in Markdown, code snippets ca
 Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Wrap all of your snippets (in different languages) inside a codeblock shortcode (see our templates for more info on this, or simply look at the Markdown file of this page to see how we render the codeblock below).
 
 {{% codeblock %}}
+
 ```python
 # some Python code here
 print("Hello, world!")
@@ -149,6 +151,7 @@ print("Hello, world!")
 # some R code here
 cat('Hello, world!')
 ```
+
 {{% /codeblock %}}
 
 {{% warning %}}
@@ -190,15 +193,16 @@ In that case, you need to omit the language right after the three back ticks. Th
 ### LaTeX Integration & Math Formulas
 
 Simply place your math formulas:
+
 - within single dollar signs for inline math: `$f(x)=x^2$` yields:
-$f(x)=x^2$
+  $f(x)=x^2$
 - within double dollar signs for display: `$$f(x)=x^2$$` yields: $$f(x)=x^2$$
 
 Our webiste currently does not support </katex> notation so please stick to using dollar signs.
 
 - correct 👍 (using dollar signs): $P(X_{i}) ≡ Pr(D_i = 1 | X_i)$
 
-- incorrect 👎  (using {{katex}} notation): {{</katex>}} P(X_{i}) ≡ Pr(D_i = 1 | X_i) {{</katex>}}
+- incorrect 👎 (using {{katex}} notation): {{</katex>}} P(X\_{i}) ≡ Pr(D_i = 1 | X_i) {{</katex>}}
 
 ### Highlighting Boxes
 
@@ -209,7 +213,6 @@ We support four kind of highlighting boxes.
 This is a tip
 
 {{% /tip %}}
-
 
 {{% warning %}}
 
@@ -236,33 +239,37 @@ If you're using wide tables, they may appear broken on smaller screens like mobi
 This will make sure that the right edge of the table fades out on small screens and they become scrollable on the horizontal axis. The following is an example of a wide table:
 {{%table%}}
 {{% wide-table %}}
-|  |  |  |  |  |  |  
+| | | | | | |  
 |-------------|-------------|------------|------------|---------------|---------------|
-| $\alpha$    | `\alpha`    | $\beta$    | `\beta`    | $\gamma$      | `\gamma`      |
-| $\delta$    | `\delta`    | $\epsilon$ | `\epsilon` | $\varepsilon$ | `\varepsilon` |
-| $\zeta$     | `\zeta`     | $\eta$     | `\eta`     | $\theta$       | `\theta`      |
-| $\vartheta$ | `\vartheta` | $\iota$    | `\iota`    | $\kappa$      | `\kappa`      |
-| $\lambda$   | `\lambda`   | $\mu$      | `\mu`      | $\nu$         | `\nu`         |
-| $\xi$       | `\xi`       | $\pi$      | `\pi`      | $\varpi$      | `\varpi`      |
-| $\rho$      | `\rho`      | $\varrho$  | `\varrho`  | $\sigma$      | `\sigma`      |
-| $\tau$      | `\tau`      | $\upsilon$ | `\upsilon` | $\phi$        | `\phi`        |
-| $\varphi$   | `\varphi`   | $\chi$     | `\chi`     | $\psi$        | `\psi`        |
-| $\omega$    | `\omega`    |
+| $\alpha$ | `\alpha` | $\beta$ | `\beta` | $\gamma$ | `\gamma` |
+| $\delta$ | `\delta` | $\epsilon$ | `\epsilon` | $\varepsilon$ | `\varepsilon` |
+| $\zeta$ | `\zeta` | $\eta$ | `\eta` | $\theta$ | `\theta` |
+| $\vartheta$ | `\vartheta` | $\iota$ | `\iota` | $\kappa$ | `\kappa` |
+| $\lambda$ | `\lambda` | $\mu$ | `\mu` | $\nu$ | `\nu` |
+| $\xi$ | `\xi` | $\pi$ | `\pi` | $\varpi$ | `\varpi` |
+| $\rho$ | `\rho` | $\varrho$ | `\varrho` | $\sigma$ | `\sigma` |
+| $\tau$ | `\tau` | $\upsilon$ | `\upsilon` | $\phi$ | `\phi` |
+| $\varphi$ | `\varphi` | $\chi$ | `\chi` | $\psi$ | `\psi` |
+| $\omega$ | `\omega` |
 {{% /wide-table %}}
 {{%/table%}}
 {{% tip %}}
 
-Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/style-guide.md)** to check out the Markdown file of this page to learn how these shortcodes are used in the text.
+Click **[here](https://github.com/tilburgsciencehub/website/blob/main-flask/content/topics/Collaborate-share/Project-management/contribute-to-tilburg-science-hub/style-guide.md)** to check out the Markdown file of this page to learn how these shortcodes are used in the text.
 
 {{% /tip %}}
 
 ### Adding Footnotes
+
 Footnotes [^1] let you reference relevant information without disrupting the flow of what you're trying to say. Need to make use of footnotes? Here is how to add them in Markdown:
+
 ```
 Footnotes[^1] let you (...)
 [^1]: My reference
 ```
+
 [^1]: [Footnotes in Markdown](https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/)
+
 ### Writing Instructions
 
 - Use the second person ("you") when speaking to our or talking about our users
@@ -301,18 +308,21 @@ Generally speaking, it's a good idea to name your file exactly like your main ti
 
     Title: Automation with GNU Make
     Filename: automation-with-gnu-make.md
+
 {{% /warning %}}
 
-### Add the correct tags 
-Every page has at the top of the code tags which, among others, help index the page. 
+### Add the correct tags
+
+Every page has at the top of the code tags which, among others, help index the page.
+
 ```
 ---
-tutorialtitle: "Web Scraping and API Mining [a good title] " 
-type: "web-scraping [very short title ~2/3 words with no capitols nor spaces]" 
-title: "Web Scraping and API Mining [the same good title]" 
+tutorialtitle: "Web Scraping and API Mining [a good title] "
+type: "web-scraping [very short title ~2/3 words with no capitols nor spaces]"
+title: "Web Scraping and API Mining [the same good title]"
 description: "[a short, relevant summary of what a particular page is about]"
-keywords: "scrape, webscraping, beautifulsoup .. [relevant keywords to the page]" 
-weight: 1 [to determine the position in the navigation 1 at the top 99 at the bottom] 
+keywords: "scrape, webscraping, beautifulsoup .. [relevant keywords to the page]"
+weight: 1 [to determine the position in the navigation 1 at the top 99 at the bottom]
 draft: false [false when finished, true when it is still a draft]
 aliases: [other urls which lead to this page]
   - /learn/web-scraping-and-api-mining [first alias is the short link]
@@ -324,26 +334,26 @@ aliases: [other urls which lead to this page]
 
 When contributing content to our platform, please address at least one of our target groups.
 
-1. __Students and novice researchers__ who look for material developed, curated, and rigorously tested by professors and experienced users, ensuring them about quality and usability. Users may not know yet what (and why) they should learn the Tilburg Science Hub way of working. These users need to be onboarded first and guided through our content.
+1. **Students and novice researchers** who look for material developed, curated, and rigorously tested by professors and experienced users, ensuring them about quality and usability. Users may not know yet what (and why) they should learn the Tilburg Science Hub way of working. These users need to be onboarded first and guided through our content.
 
-2. __(Advanced) researchers and professors__ who look for useful material developed by their peers. These users have identified a problem, but need code snippets to use in their projects. Researchers seek to avoid mistakes that others have made before them, and look to get inspired by their colleagues. They may also use our platform to share their solutions to problems (e.g., in the form of building blocks or tutorials).
+2. **(Advanced) researchers and professors** who look for useful material developed by their peers. These users have identified a problem, but need code snippets to use in their projects. Researchers seek to avoid mistakes that others have made before them, and look to get inspired by their colleagues. They may also use our platform to share their solutions to problems (e.g., in the form of building blocks or tutorials).
 
-3. __Teams and small businesses__ who wish to get inspired by how scientists work on on data-intensive projects. Tilburg Science Hub offers tools and knowledge to help teams work together better, more efficiently. Our content can be adopted by individual team members (i.e., adoption doesn't disturb the way of working of other team members), or jointly by a team (i.e., the entire team commits to the Tilburg Science Hub way of working). <!--Businesses can also request a paid custom consultancy to implement reproducible workflows in their own processes.-->
+3. **Teams and small businesses** who wish to get inspired by how scientists work on on data-intensive projects. Tilburg Science Hub offers tools and knowledge to help teams work together better, more efficiently. Our content can be adopted by individual team members (i.e., adoption doesn't disturb the way of working of other team members), or jointly by a team (i.e., the entire team commits to the Tilburg Science Hub way of working). <!--Businesses can also request a paid custom consultancy to implement reproducible workflows in their own processes.-->
 
-4. __Data science enthusiasts__ who encounter our site when working on their projects. We strive to become a key learning resource in the data science community.
+4. **Data science enthusiasts** who encounter our site when working on their projects. We strive to become a key learning resource in the data science community.
 
 {{% warning %}}
 
 **Keep in mind our key goals**
 
-Our platform focuses on __usability__ (i.e., ability to quickly copy-paste code or download templates), __speed__ (i.e., loading time), and __attractiveness__ (i.e., visual appeal, “state-of-the-art” look, good writing).
+Our platform focuses on **usability** (i.e., ability to quickly copy-paste code or download templates), **speed** (i.e., loading time), and **attractiveness** (i.e., visual appeal, “state-of-the-art” look, good writing).
 
 Our platform is a (classical) two-sided market.
 
-1. We attract __novice and expert users__ that *use* our content in their work, and
+1. We attract **novice and expert users** that _use_ our content in their work, and
 
-2. We build a __community of content creators__ that have an outspoken vision on how to conduct science efficiently.
-{{% /warning %}}
+2. We build a **community of content creators** that have an outspoken vision on how to conduct science efficiently.
+   {{% /warning %}}
 
 {{% warning %}}
 **License**
