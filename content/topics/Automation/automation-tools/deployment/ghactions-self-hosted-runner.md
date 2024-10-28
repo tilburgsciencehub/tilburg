@@ -1,13 +1,13 @@
 ---
-title: "Configure a Self-hosted runner for GitHub Actions workflows" 
+title: "Configure a Self-hosted runner for GitHub Actions workflows"
 description: "Learn advantages and steps to configure your own self-hosted runner for GitHub Actions Workflows"
 keywords: "Workflow, Docker, Self-Hosted, Workflow, GitHub, Actions, GitHub Actions, Runner"
 weight: 2
 author: "Diego Sánchez"
 authorlink: "www.linkedin.com/in/diego-sánchez-pérez-0097551b8"
 draft: false
-date: 2023-10-24T22:01:14+05:30 
-aliases: 
+date: 2023-10-24T22:01:14+05:30
+aliases:
   - /github_actions/self-hosted_runner
 ---
 
@@ -20,15 +20,13 @@ aliases:
 
 This building block will introduce you to self-hosted runners for GitHub Actions, their advantages, and the process of setting up a self-hosted runner for your GitHub Actions workflows. For that you will be presented with two setup approaches, the standard one, and our recommended Docker-based approach. Moreover, the basic aspect of self-hosted runners' operation is also reviewed so you know what to expect and how to use them once configured.
 
-
 ## Introducing GitHub Actions self-hosted runners
 
-If you have some degree of familiarity with GitHub Actions, you may already have an intuition of what is the role of runners in executing a workflow. Conversely, if you are new to the concept, or you feel that a brief refresher could be useful, consider the following fragment from our [introductory building block to GitHub Actions](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/automate-your-workflow/intro_ghactions/):
+If you have some degree of familiarity with GitHub Actions, you may already have an intuition of what is the role of runners in executing a workflow. Conversely, if you are new to the concept, or you feel that a brief refresher could be useful, consider the following fragment from our [introductory building block to GitHub Actions](intro_ghactions.md):
 
 _"runners are the servers where the jobs are executed once a workflow is triggered. GitHub offers runners based on Linux, Windows, or macOS."_
 
 Therefore, every task considered within your workflows is executed inside a runner, which can be intuitively understood as a system/machine designated to carry out your workflow(s) or parts of it. By default, these are pre-configured runners hosted by GitHub. While GitHub's runners provide numerous benefits such as immediate availability and user-friendliness, they also present constraints in terms of customizability and computational capacity. In other words, you may find that your project's workflows require some components not easily manageable within a GitHub-hosted runner, or they involve computationally intensive tasks that a GitHub-hosted runner simply cannot handle. For such scenarios, GitHub provides the alternative of configuring a runner of your own inside your PC or on any machine to which you have access. This way, a self-hosted runner can take advantage of the available resources, components, and dependencies already present on your PC or the system where it is set up, to run your workflows more efficiently or circumvent the limitations of GitHub-hosted runners.
-
 
 ## Setting up your self-hosted runner: The standard approach
 
@@ -44,10 +42,9 @@ Once inside the repository for whose workflows you would like to configure a sel
 
 {{% tip %}}
 
-During the execution of the installation script, you will be given the option to introduce through the command line a name for the runner and a series of labels to identify it. It is a recommended practice to provide non-default names and identifying tags to your runners if you plan to have multiple of them to make them easily identifiable. However, if you decide not to do so GitHub will provide a generic name and labels to your newly-configured runner. 
+During the execution of the installation script, you will be given the option to introduce through the command line a name for the runner and a series of labels to identify it. It is a recommended practice to provide non-default names and identifying tags to your runners if you plan to have multiple of them to make them easily identifiable. However, if you decide not to do so GitHub will provide a generic name and labels to your newly-configured runner.
 
 {{% /tip %}}
-
 
 <p align = "center">
 <img src = "../images/add-new-runner-page.png" width="800" style="border:1px solid black;">
@@ -74,7 +71,6 @@ You should see something like the image below in your command line after the exe
 <figcaption> Command line output signaling the runner is up and working </figcaption>
 </p>
 
-
 ### Using the runner
 
 With your runner appropriately configured, to activate it you just have to execute the script in charge of such action (`run.sh`) emulating the last step of the installation process. While active, the runner will remain "listening for jobs", waiting for the execution workflow containing jobs that can be assigned to it. Conversely, you can stop the running by pressing `Ctrl + C`^.
@@ -98,7 +94,7 @@ The steps previously presented constitute the standard procedure for configuring
 
 {{% tip %}}
 
-By visiting our [Docker introductory building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/docker/) you will learn more about its advantages and basic functioning, which will also help you get a better grasp of what is happening behind the scenes during the self-hosted runner setup process! Analogously you may also find it interesting to check [other Docker use cases that we have previously covered at Tilburg Science Hub](https://tilburgsciencehub.com/search/?q=docker).
+By visiting our [Docker introductory building block](../../Replicability/Docker/docker.md) you will learn more about its advantages and basic functioning, which will also help you get a better grasp of what is happening behind the scenes during the self-hosted runner setup process! Analogously you may also find it interesting to check [other Docker use cases that we have previously covered at Tilburg Science Hub](https://tilburgsciencehub.com/search/?q=docker).
 
 {{% /tip %}}
 
@@ -141,18 +137,17 @@ ENTRYPOINT ["/actions-runner/run.sh"]
 
 {{% /codeblock %}}
 
-As you may have noticed in the Dockerfile template, there are some placeholders that you should replace for it to work properly. `REPO_URL` and `TOKEN` correspond to the arguments of the configuration process which are subject to change reviewed in the previous section. Meanwhile, `RUNNER_NAME` and `LABELS` intuitively capture the name that you want to give to  the runner, and the labels that you wish to assign to it. Given that the configuration process is handled by Docker while using this method, you cannot interactively provide them as done in the standard approach and thus you should specify them beforehand. Finally, `RELEVANT_DEPENDENCIES_FOR_YOUR_RUNNER` should be replaced by the dependencies that are relevant to the operations that will be conducted within your new self-hosted runner. These will be installed inside the docker container and thus will be made available automatically to your runner. 
+As you may have noticed in the Dockerfile template, there are some placeholders that you should replace for it to work properly. `REPO_URL` and `TOKEN` correspond to the arguments of the configuration process which are subject to change reviewed in the previous section. Meanwhile, `RUNNER_NAME` and `LABELS` intuitively capture the name that you want to give to the runner, and the labels that you wish to assign to it. Given that the configuration process is handled by Docker while using this method, you cannot interactively provide them as done in the standard approach and thus you should specify them beforehand. Finally, `RELEVANT_DEPENDENCIES_FOR_YOUR_RUNNER` should be replaced by the dependencies that are relevant to the operations that will be conducted within your new self-hosted runner. These will be installed inside the docker container and thus will be made available automatically to your runner.
 
 {{% example %}}
 
-Imagine that you are building a GitHub Actions workflow for code formatting and testing like the one presented on [our building block on the topic](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/automate-your-workflow/ghactions-workflow/). In that case and assuming that your project does not require any additional dependencies not installed by miniconda, your relevant dependencies would be the testing framework `Pytest` and the code formatters `Black`, `Isort` and, `Mypy`. Consequently, line 19 of the Dockerfile would look as follows: 
+Imagine that you are building a GitHub Actions workflow for code formatting and testing like the one presented on [our building block on the topic](ghactions-workflow.md). In that case and assuming that your project does not require any additional dependencies not installed by miniconda, your relevant dependencies would be the testing framework `Pytest` and the code formatters `Black`, `Isort` and, `Mypy`. Consequently, line 19 of the Dockerfile would look as follows:
 
 `RUN pip install pytest black isort mypy`
 
-
 {{% /example %}}
 
-Note: The template Dockerfile was designed for Python-based projects, including a Miniconda base image (`FROM continuumio/miniconda3`) and "pip" as the dependency installer (`RUN pip install ...`). However, by adapting these two lines of the Dockerfile at your convenience you can make it work for projects based on other languages/frameworks. 
+Note: The template Dockerfile was designed for Python-based projects, including a Miniconda base image (`FROM continuumio/miniconda3`) and "pip" as the dependency installer (`RUN pip install ...`). However, by adapting these two lines of the Dockerfile at your convenience you can make it work for projects based on other languages/frameworks.
 
 ### Using the runner through Docker
 
@@ -167,15 +162,8 @@ The only difference regarding the use of a self-hosted runner when configured th
 - Alternatively, you can take advantage of Docker's advantage by setting your Self-hosted runner inside a Docker container by implementing the setup instructions in a Dockerfile and having your runner inside a Docker container.
 
 - Self-hosted runners must be Started/Stopped manually.
-{{% /summary %}}
+  {{% /summary %}}
 
 ## Additional resources
 
 - [GitHub Actions documents: Hosting your own runners](https://docs.github.com/en/actions/hosting-your-own-runners)
-
-
-
-
-
-
-

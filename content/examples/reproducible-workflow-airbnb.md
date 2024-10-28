@@ -20,16 +20,17 @@ We've crafted this project to run:
 - platform-independent (Mac, Linux, Windows)
 - across a diverse set of software programs (Stata, Python, R)
 - producing an entire (mock) paper, including modules that
-	- download data from Kaggle,
-	- prepare data for analysis,
-	- run a simple analysis,
-	- produce a paper with output tables and figures.
+  - download data from Kaggle,
+  - prepare data for analysis,
+  - run a simple analysis,
+  - produce a paper with output tables and figures.
 
 ## How to run it
+
 ### Dependencies
 
 - Install [Python](/get/python/).
-  - Anaconda is recommended. [Download Anaconda](https://www.anaconda.com/distribution/).
+  - Anaconda is recommended. [Download Anaconda](https://www.anaconda.com/download).
   - check availability: type `anaconda --version` in the command line.
 - Install Kaggle package.
   - [Kaggle API](https://github.com/Kaggle/kaggle-api) instruction for installation and setup.
@@ -61,11 +62,9 @@ Open your command line tool:
   - if not, type `cd yourpath/airbnb-workflow` to change your directory to `airbnb-workflow`
 - Type `make` in the command line.
 
-
-
 ### Directory structure
 
-Make sure `makefile` is put in the present working directory. The directory structure for the Airbnb project  is shown below.
+Make sure `makefile` is put in the present working directory. The directory structure for the Airbnb project is shown below.
 
 ```text
 ├── data
@@ -107,7 +106,6 @@ Make sure `makefile` is put in the present working directory. The directory stru
 - **data**: all raw data.
 - **src**: all source codes.
   - Three parts: **data_preparation**, **analysis**, and **paper** (including TeX files).
-
 
 <!-- {{% codeblock %}}
 
