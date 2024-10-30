@@ -22,7 +22,7 @@ The `modelplot` function, within the `modelsummary` package, constructs coeffici
 - A focal regression coefficient across multiple models
 - Multiple regression coefficients within a single model
 
-We will be using the models from the paper ["Doing well by doing good? Green office buildings"](https://www.aeaweb.org/articles?id=10.1257/aer.100.5.2492). These models regress the logarithm of rent per square foot in commercial office buildings on a dummy variable representing a green rating (1 if rated as green) and other building characteristics. Please refer to the [`modelsummary` building block](model-summary/) for more information about the paper.
+We will be using the models from the paper ["Doing well by doing good? Green office buildings"](https://www.aeaweb.org/articles?id=10.1257/aer.100.5.2492). These models regress the logarithm of rent per square foot in commercial office buildings on a dummy variable representing a green rating (1 if rated as green) and other building characteristics. Please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/topics/visualization/data-visualization/regression-results/model-summary/) for more information about the paper.
 
 ## Load packages and data
 
