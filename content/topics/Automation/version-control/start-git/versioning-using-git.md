@@ -15,11 +15,12 @@ aliases:
 
 ## Overview
 
-Welcome to this introductory guide for Git and GitHub. In this topic, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
+Welcome to this introductory guide for Git and GitHub. In this topic, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects.
 
 The topic consists of the following sections:
+
 - What is Git?
-- What is GitHub? 
+- What is GitHub?
 - Configuring Git on a new computer
 - Creating or joining repositories
 - "Workcycles" to track your changes
@@ -37,8 +38,9 @@ You can optionally use Git in combination with an online hosting service such as
 
 On top of the basic features of Git (like versioning), GitHub offers a range of tools
 that allow you to collaborate more efficiently. A few examples are:
-- *Issues* are like to-do lists, flavored with a discussion board.
-- *Projects* are akin to a [*Scrum board*](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/). It facilitates project management, allowing for task allocation and progress tracking.
+
+- _Issues_ are like to-do lists, flavored with a discussion board.
+- _Projects_ are akin to a [_Scrum board_](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/). It facilitates project management, allowing for task allocation and progress tracking.
 
 {{% tip %}}
 **For starters...**
@@ -55,6 +57,7 @@ To use Git on your local machine, tell Git your name and email address. This way
 Open `Git bash`, and type the following commands:
 
 {{% codeblock %}}
+
 ```bash
 # Set the author name for your commits
 git config --global user.name "[Your Name]"
@@ -62,9 +65,10 @@ git config --global user.name "[Your Name]"
 # Set the author email for your commits
 git config --global user.email "[your.email@example.com]"
 ```
+
 {{% /codeblock %}}
 
-This ensures every contribution you make is uniquely recognized and properly linked to you. 
+This ensures every contribution you make is uniquely recognized and properly linked to you.
 
 ### Creating or joining repositories
 
@@ -73,9 +77,9 @@ Git organizes your code in so-called repositories. You can either create a repos
 #### Create a new repository for a new project
 
 If you would like to start a new project, it's easiest to start
-your repository from one of our [example projects](/examples). 
+your repository from one of our [example projects](/examples).
 
-- If it is a template project, navigate to a project’s GitHub page, and select *Use this template* (a green button). Choose a name for your new repository, and proceed with the standard options. Note down the URL for your repository (e.g., `https://github.com/tilburgsciencehub/test-repository`).
+- If it is a template project, navigate to a project’s GitHub page, and select _Use this template_ (a green button). Choose a name for your new repository, and proceed with the standard options. Note down the URL for your repository (e.g., `https://github.com/tilburgsciencehub/test-repository`).
 
 For example, this [example-make-workflow](https://github.com/rgreminger/example-make-workflow) can be used as a template directly:
 
@@ -98,10 +102,12 @@ Just navigate to your main project directory, open `Git bash`, and
 type
 
 {{% codeblock %}}
+
 ```bash
 # initialize a new repository
 git init
 ```
+
 {{% /codeblock %}}
 
 #### Clone an existing repository to your local computer
@@ -129,7 +135,7 @@ URL of the repository (e.g., `https://github.com/[username]/[project-name]`), an
 {{% tip %}}
 **Storing repositories best practices**
 
-- Avoid storing your project deep within many sub-directories, but rather higher up in your folder hierarchy (e.g. 'D/projects'). This is because Git Bash cannot handle file paths over a certain number of characters. 
+- Avoid storing your project deep within many sub-directories, but rather higher up in your folder hierarchy (e.g. 'D/projects'). This is because Git Bash cannot handle file paths over a certain number of characters.
 - Avoid complicated directory names, so you can navigate quickly to them. In this example, the folder is named `my-project`.
 - Avoid storing your Git repositories on Dropbox or Drive as this may lead to synchronization conflicts.
 
@@ -138,6 +144,7 @@ URL of the repository (e.g., `https://github.com/[username]/[project-name]`), an
 ### "Workcycles" to track your changes
 
 When working on your project, you do the following two things:
+
 - Make changes to your project (e.g., such as adding, removing, or changing source files),
 - Synchronize your repository with GitHub, so that (a) you make a backup of your changes, (b) you allow other team members to see your changes, and (c) you see changes that team members have done.
 
@@ -148,13 +155,14 @@ When working on your project, you do the following two things:
 - Now it's time to start working on your project. "Working" means making changes to files or directories (such as adding, changing, or deleting files or directories).
 
 - Typically, you execute this workflow multiple times a day when working on a project. Every time you execute this workflow, you "save" a snapshot of your project that
-you can roll back to later.
+  you can roll back to later.
 
 - Git separates a "save" operation into two stages: first, files (or directories) can be
-gathered on a so-called "staging area" using the command `git add`. You can use multiple
-of these commands after each other. Then, in a second step, the changes are saved - or, in Git terminology - "committed". The command for this is `git commit`. See below for an example, which also adds a few other useful commands.
+  gathered on a so-called "staging area" using the command `git add`. You can use multiple
+  of these commands after each other. Then, in a second step, the changes are saved - or, in Git terminology - "committed". The command for this is `git commit`. See below for an example, which also adds a few other useful commands.
 
 {{% codeblock %}}
+
 ```bash
 # show files or directories that were changed (or that still need to be added)
 # files that are already in the staging area are green; files that are not
@@ -180,23 +188,25 @@ git commit -m "message"
 # optionally, use git log to see the versioning history
 git log
 ```
-{{% /codeblock %}}
 
+{{% /codeblock %}}
 
 {{% tip %}}
 **Exclude or remove files from tracking**
 
-Want to avoid tracking specific files and folders from versioning? For example, there is no point in tracking *generated files* in `/gen`, as these files are purely created based on source code in `/src` (which, in
-turn, you *do* would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking in this [topic](/learn/gitignore).
+Want to avoid tracking specific files and folders from versioning? For example, there is no point in tracking _generated files_ in `/gen`, as these files are purely created based on source code in `/src` (which, in
+turn, you _do_ would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking in this [topic](/learn/gitignore).
 
-Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidentally committed a large data set and would like to take it out of the repository entirely. This [topic](/remove/commited-files) teaches you how to remove sensitive or large files from your repository. 
+Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidentally committed a large data set and would like to take it out of the repository entirely. This [topic](/remove/commited-files) teaches you how to remove sensitive or large files from your repository.
 
 {{% /tip %}}
 
 #### Synchronize your changes with a server
+
 Everyone can sync their local changes with the remote repository on GitHub. You can also "download" changes to your local repository from the remote repository.
 
 {{% codeblock %}}
+
 ```bash
 # (1) DOWNLOAD AND MERGE CHANGES
 
@@ -212,38 +222,39 @@ git merge # merges changes with your local files
 # upload all local branch commits to GitHub
 git push
 ```
-{{% /codeblock %}}
 
+{{% /codeblock %}}
 
 ### Branching
 
-Branches separate the main version of your project (the "main" branch) from any experimental code in which you develop new features. Branches allow team members to make changes to the project without immediately affecting the main version of the project. 
+Branches separate the main version of your project (the "main" branch) from any experimental code in which you develop new features. Branches allow team members to make changes to the project without immediately affecting the main version of the project.
 
 We provide an introduction to branching and branch naming strategies in additional topics:
 
-*  [Git Branching Strategies](/git/branching/strategies). This topic explains several Git Branching Strategies and its own set of advantages and disadvantages.
-*  [Best Practices for Naming Git Branches](/naming/branching). This topic covers useful practices for naming branches to ensure a clear and structured repository.
+- [Git Branching Strategies](/git/branching/strategies). This topic explains several Git Branching Strategies and its own set of advantages and disadvantages.
+- [Best Practices for Naming Git Branches](/naming/branching). This topic covers useful practices for naming branches to ensure a clear and structured repository.
 
 ### Valuable links
+
 Continue expanding your Git and GitHub knowledge with these valuable links:
 
-- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub. 
-- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.  
+- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub.
+- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.
 - [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf): A tutorial offering insights and practical guidance on using Git for version control.
-- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): An introductory interactive DataCamp course to grasp the fundamentals of Git version control, perfect for beginners. 
-- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science): A DataCamp course tailored for Data Scientists that explores Git's application in data science projects. 
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): An introductory interactive DataCamp course to grasp the fundamentals of Git version control, perfect for beginners.
 - [GitHub Concepts](https://www.datacamp.com/courses/github-concepts): A DataCamp course that can help you enhance your understanding of GitHub's core concepts and functionalities, and provides insights into collaborative coding, project management, and more.
 
 {{% summary %}}
 In this topic, you've gained essential skills to use Git and GitHub for efficient version control and collaboration on coding projects.
 
 The following points summarize this topic:
+
 - **Git** is an open-source version control system that enables tracking of source files and changes. It allows you to revert to previous file versions and collaborate seamlessly with team members.
 - **GitHub** is an online hosting service that complements Git, providing features like code backup, synchronization across devices, and collaborative project work. GitHub offers additional tools such as issues for task management, and projects for organized project management.
-- You can set up Git on your local machine by configuring your name and email address. 
-- Git organizes your code in **repositories**. You can either create a repository for new or existing projects or join existing repositories. 
+- You can set up Git on your local machine by configuring your name and email address.
+- Git organizes your code in **repositories**. You can either create a repository for new or existing projects or join existing repositories.
 - **Branches** allow the development of new features without affecting the main project.
-{{% /summary %}}
+  {{% /summary %}}
 
 <!--
 ![Git workflows.](../images/git.png)
