@@ -12,7 +12,7 @@ aliases:
 
 ## SURFsara's LISA Cluster: Overview
 
-The LISA cluster is a good alternative to [HPC TiU computing](https://tilburgsciencehub.com/topics/configure-your-computer/infrastructure-choice/hpc_tiu/) where hundreds of servers can be accessed via a so-called queue system. The execution of a calculation task can be assigned to multiple servers. As soon as the number of required servers is available, the assignment is executed.
+The LISA cluster is a good alternative to [HPC TiU computing](https://tilburgsciencehub.com/topics/automation/replicability/cloud-computing/hpc_tiu/) where hundreds of servers can be accessed via a so-called queue system. The execution of a calculation task can be assigned to multiple servers. As soon as the number of required servers is available, the assignment is executed.
 
 Some of the servers are linked to each other via a so-called high-speed link (infiniband). This part of the LISA Cluster is a good choice for executing an assignment that requires a great deal of communication between servers.
 The support desk of SurfSARA can support in use. The support desk has templates and sample applications and offers workshops for beginners.

@@ -1,5 +1,5 @@
 ---
-title: "Configure a VM with GPUs in Google Cloud" 
+title: "Configure a VM with GPUs in Google Cloud"
 description: "Learn how to configure code in a Google Cloud instance with GPUs within a Docker environment"
 keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, GPU, Virtual Machine, Instance, Memory"
 weight: 3
@@ -7,7 +7,7 @@ author: "Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/fernando-iscar/"
 draft: false
 date: 2023-06-05 #updated 2023-09-15
-aliases: 
+aliases:
   - /run/vm-on-google-cloud
 ---
 
@@ -18,7 +18,7 @@ In this building block, you will discover how to create and configure a simple a
 After going through this guide, you'll get more familiar with:
 
 - Establishing a VM instance in Google Cloud with optimized configurations.
-- The usefulness of [Docker](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/docker/) in combination with cloud virtual machines.
+- The usefulness of [Docker](https://tilburgsciencehub.com/topics/automation/replicability/docker/docker/) in combination with cloud virtual machines.
 - NVIDIA drivers to access GPU power.
 
 ## Initialize a new instance
@@ -50,16 +50,15 @@ You'll encounter four primary machine categories to select from:
 
 {{% warning %}}
 
-**Save on unnecessary costs!** 
+**Save on unnecessary costs!**
 
-GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses. 
+GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses.
 
 See an example of how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
 
 {{% /warning %}}
 
 In case you are unsure, a good choice to balance between price and performance would be to select an **NVIDIA T4 n1-standard-8** machine. It's packed with 30GB of RAM and a GPU. If we would need more vCPUs or memory, we can improve it by selecting a customized version, under the **"Machine type"** header.
-
 
 <p align = "center">
 <img src = "../images/machine-config.png" width="700" style="border:1px solid black;">
@@ -83,9 +82,9 @@ In the top right corner, you'll see a real-time **pricing summary**. As you adju
 
 #### Boot disk settings
 
-As we scroll down through the configuration process, we'll skip to [Boot Disk settings](https://cloud.google.com/compute/docs/disks). 
+As we scroll down through the configuration process, we'll skip to [Boot Disk settings](https://cloud.google.com/compute/docs/disks).
 
-Think of your boot disk as your instance's storage locker - here, you get to pick its type (standard or SSD), size, and the VM image (Operating System) you want to load on it. 
+Think of your boot disk as your instance's storage locker - here, you get to pick its type (standard or SSD), size, and the VM image (Operating System) you want to load on it.
 
 A bigger boot disk equals more space for data and apps. So, if you're playing with chunky datasets, you'll want to upgrade your storage. In our case, we'll crank up the boot disk size to 100GB, which is a good starting point. In fact, boosting your storage won't be very costly.
 
@@ -94,14 +93,13 @@ A bigger boot disk equals more space for data and apps. So, if you're playing wi
 <figcaption> Boot disk configuration summary</figcaption>
 </p>
 
-
 If you're considering integrating GPUs into your instance, it's recommended to switch the default boot disk from **Debian** to **Ubuntu**.
 
 **Ubuntu** simplifies the installation of proprietary software drivers and firmware, making the process of installing necessary [NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) for GPU utilization significantly smoother. This could save you time and effort in the long run. We will cover this topic later.
 
 #### Firewall Rules
 
-As you scroll down, you will find the [Firewall Rules](https://cloud.google.com/compute/docs/samples/compute-firewall-create) section. Here, you will see the default settings that manage your network traffic flow. HTTP or HTTPS? Go for HTTPS whenever you can. It's the safer bet, wrapping your data transfers in an encryption layer for added security. 
+As you scroll down, you will find the [Firewall Rules](https://cloud.google.com/compute/docs/samples/compute-firewall-create) section. Here, you will see the default settings that manage your network traffic flow. HTTP or HTTPS? Go for HTTPS whenever you can. It's the safer bet, wrapping your data transfers in an encryption layer for added security.
 
 However, many developers activate both HTTP and HTTPS for broader compatibility, handling secure (HTTPS) and insecure (HTTP) requests alike. But let's keep it modern and secure, HTTPS should be your go-to, especially when handling sensitive data.
 
@@ -123,12 +121,10 @@ After fine-tuning your instance's setup and firewall rules, you can go ahead and
 
 ## Establish your environment using Docker
 
-At this point, we strongly recommend you [set up Docker](https://tilburgsciencehub.com/topics/configure-your-computer/automation-and-workflows/docker/)
-as a great tool to easily [deploy your projects and environments within your newly created virtual machine](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/dockerhub/). If you are not familiar with the advantages that Docker offers in terms of productivity and open science value for your project, check out our building block on [Docker for reproducible research](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/docker/) 
+At this point, we strongly recommend you [set up Docker](https://tilburgsciencehub.com/topics/automation/replicability/docker/docker/)
+as a great tool to easily [deploy your projects and environments within your newly created virtual machine](https://tilburgsciencehub.com/topics/automation/replicability/docker/dockerhub/). If you are not familiar with the advantages that Docker offers in terms of productivity and open science value for your project, check out our building block on [Docker for reproducible research](https://tilburgsciencehub.com/topics/automation/replicability/docker/#docker-ezo)
 
-
-You can check Docker's setup process in a Google Cloud virtual machine by visiting [this building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/google_cloud_docker/), where you'll find more details as well as a setup script that will get you Docker up and running in your virtual machine in the blink of an eye. After you're done, come back here to move on to the next step.
-
+You can check Docker's setup process in a Google Cloud virtual machine by visiting [this building block](https://tilburgsciencehub.com/topics/automation/replicability/docker/google_cloud_docker/), where you'll find more details as well as a setup script that will get you Docker up and running in your virtual machine in the blink of an eye. After you're done, come back here to move on to the next step.
 
 ## Install the NVIDIA drivers and container toolkit
 
@@ -139,9 +135,11 @@ Besides the regular drivers, if you have your project containerized within Docke
 After completing the installation process of the NVIDIA container toolkit, you can run the following in your virtual machine terminal to check if the installation was successful. In that case, you will see in your command line something resembling the image below.
 
 {{% codeblock %}}
+
 ```bash
 sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
+
 {{% /codeblock %}}
 
 <p align = "center">
@@ -151,11 +149,12 @@ sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 
 ## Confirm GPUs availability
 
-To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. 
+To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using.
 
 For instance, let's say you're working on a Python deep learning project. If you are using `PyTorch`, the following command can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
 
 {{% codeblock %}}
+
 ```python
 import torch
 
@@ -165,11 +164,13 @@ else:
     print("GPUs not available")
 
 ```
+
 {{% /codeblock %}}
 
 If you are working with other common deep learning libraries like `Tensorflow`, you could verify it this way:
 
 {{% codeblock %}}
+
 ```python
 import tensorflow as tf
 
@@ -180,6 +181,7 @@ else:
     print("GPUs not available")
 
 ```
+
 {{% /codeblock %}}
 
 Bear in mind that the particular framework you are using within your project, such as `Pytorch` or `Tensorflow` may have specific additional requirements to make use of your machine's GPUs on top of the ones already presented in this building block.
@@ -187,27 +189,25 @@ Bear in mind that the particular framework you are using within your project, su
 {{% tip %}}
 **Working with heavy files or having memory issues?**
 
-Your Virtual Machine can be monitored, this will be useful especially when the tasks you are running are memory-demanding. 
+Your Virtual Machine can be monitored, this will be useful especially when the tasks you are running are memory-demanding.
 
-Also, oftentimes you'll be working with large files and you'll need to use the so-called "buckets" to access extra storage. The ways to establish the connection with them might not be that intuitive, but luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/) on the topic!
-
+Also, oftentimes you'll be working with large files and you'll need to use the so-called "buckets" to access extra storage. The ways to establish the connection with them might not be that intuitive, but luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/topics/collect-store/data-storage/commercial-cloud/mem-storage-gcp/) on the topic!
 
 {{% /tip %}}
-
 
 {{% summary %}}
 
 - **Google Cloud VM Setup:**
 
-    - Register on Google Cloud.
-    - Create a Virtual Machine that satisfies your computational power needs.
-    - Select the most appropriate Boot Disk and Firewall Rules
+  - Register on Google Cloud.
+  - Create a Virtual Machine that satisfies your computational power needs.
+  - Select the most appropriate Boot Disk and Firewall Rules
 
 - **Enable reproducibility and access the GPU power**
 
-    - Install Docker on the VM to aim for reproducibility.
-    - Install NVIDIA drivers and the container toolkit for GPUs
-    - Confirm GPU availability
+  - Install Docker on the VM to aim for reproducibility.
+  - Install NVIDIA drivers and the container toolkit for GPUs
+  - Confirm GPU availability
 
 {{% /summary %}}
 

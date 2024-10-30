@@ -7,10 +7,9 @@ author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 draft: false
 aliases:
-- /run/r-in-the-cloud
-- /run/r-on-aws
-- /reproduce/rstudio-on-aws
-
+  - /run/r-in-the-cloud
+  - /run/r-on-aws
+  - /reproduce/rstudio-on-aws
 ---
 
 # Run RStudio on AWS using Docker
@@ -19,9 +18,10 @@ Seeking to run R in the cloud? Use this easy step-by-step guide to get started!
 
 ## Overview
 
-While cloud services like [Amazon Web Services (AWS)](https://tilburgsciencehub.com/topics/more-tutorials/running-computations-remotely/cloud-computing/) are great for big data processing and storage, it doesn’t give you immediate access to tools like R and RStudio. With [Docker](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/docker/), though, you can launch R and RStudio on AWS without trouble.
+While cloud services like [Amazon Web Services (AWS)](https://tilburgsciencehub.com/topics/more-tutorials/running-computations-remotely/cloud-computing/) are great for big data processing and storage, it doesn’t give you immediate access to tools like R and RStudio. With [Docker](https://tilburgsciencehub.com/topics/automation/replicability/docker/docker/), though, you can launch R and RStudio on AWS without trouble.
 
 What are the benefits?
+
 - Avoid dependency issues and foster reproducible research
 - Specify software versions which always work, regardless of which operating system you use
 - Setup virtual computers for your colleagues - so that they can work as productively as you do!
@@ -39,7 +39,8 @@ In this building block, we use DockerHub -- a hosted repository service like Git
 1. [Launch and connect to an AWS instance](https://tilburgsciencehub.com/topics/more-tutorials/running-computations-remotely/launch-instance/)
 
 2. Install `docker` on the instance:
-{{% codeblock %}}
+   {{% codeblock %}}
+
 ```bash
 # Update the packages on your instance
 $ sudo yum update -y
@@ -50,12 +51,14 @@ $ sudo service docker start
 # Add the ec2-user to the docker group so you can execute Docker commands without using sudo.
 $ sudo usermod -a -G docker ec2-user
 ```
+
 {{% /codeblock %}}
 
 3. Install `docker-decompose` on the instance:
 
 {{% codeblock %}}
-```bash
+
+````bash
 # Copy the appropriate docker-compose binary from GitHub:
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
@@ -121,7 +124,8 @@ The docker-compose.yml file contains the rules required to configure the image a
 {{% codeblock %}}
 ```bash
 docker-compose -f docker-compose.yml run --name rstudio --service-ports rstudio
-```
+````
+
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -129,6 +133,7 @@ Make sure to change directory to the location of the docker-compose.yml file bef
 {{% /tip %}}
 
 ### Steps 8-9: Configure security group and launch R
+
 8. Open the `8787` web server port on EC2
 
 We're almost there! In order to get access to R on the web interface you need to configure the security group which controls the traffic that is allowed to enter and leave the resources (here: an EC2 instance) that it is associated with.
@@ -136,15 +141,15 @@ We're almost there! In order to get access to R on the web interface you need to
 For each security group, you add rules that control the traffic based on protocols and port numbers. There are separate sets of rules for inbound traffic and outbound traffic. The RStudio server is fully accessible only when port `8787` is open. This involves adding inbound rules on the instance.
 
 - Go to AWS management console and security groups
-![](../images/open-portal1.gif)
+  ![](../images/open-portal1.gif)
 
 - Edit inbound rules: IP version = IPv4; Type = Custom TCP; Port range = `8787`
-![](../images/open-portal3.gif)
-
+  ![](../images/open-portal3.gif)
 
 9. Launch R
+
 - Copy the Public IPv4 DNS address for instance IP
 - Open a new tab in your browser and paste the URL, including the port number, for example: `http://<instance IP>:8787`
-![](../images/open-r.gif)
+  ![](../images/open-r.gif)
 
 - To login, enter `rstudio` as username and the password specified earlier in the docker-compose file.
