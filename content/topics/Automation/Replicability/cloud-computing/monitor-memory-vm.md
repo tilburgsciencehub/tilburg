@@ -1,5 +1,5 @@
 ---
-title: "Monitor and solve memory constraints in your computational environment" 
+title: "Monitor and solve memory constraints in your computational environment"
 description: "After configuring a Google Cloud instance with GPUs, learn to monitor and handle memory issues"
 keywords: "Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory"
 weight: 11
@@ -7,13 +7,13 @@ author: "Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/fernando-iscar/"
 draft: false
 date: 2023-10-02
-aliases: 
+aliases:
   - /handle/memory-issues
 ---
 
 ## Overview
 
-In any local or virtual machine, monitoring and managing memory allocation is crucial. Regardless of how advanced or powerful your machine might be, there are always potential bottlenecks, especially when working with memory-intensive tasks. 
+In any local or virtual machine, monitoring and managing memory allocation is crucial. Regardless of how advanced or powerful your machine might be, there are always potential bottlenecks, especially when working with memory-intensive tasks.
 
 In this guide, we delve deep into:
 
@@ -26,13 +26,13 @@ In this guide, we delve deep into:
 
 The commands `htop` and `nvtop` are designed for Linux-based environments (such as Ubuntu or Debian) given their widespread use in virtual machine contexts due to their open-source nature, robust security, and versatility.
 
-If you wonder how to set-up a Virtual Machine with a Linux system, go through our [building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/config-vm-gcp/)!
+If you wonder how to set-up a Virtual Machine with a Linux system, go through our [building block](https://tilburgsciencehub.com/topics/automation/replicability/cloud-computing/config-vm-gcp/)!
 
 {{% /tip %}}
 
 ## Handling memory allocation issues
 
-It's not uncommon for systems to run out of memory, especially when dealing with large datasets or computation-heavy processes. When a system can't allocate required memory, it can result in runtime errors. 
+It's not uncommon for systems to run out of memory, especially when dealing with large datasets or computation-heavy processes. When a system can't allocate required memory, it can result in runtime errors.
 
 While the straightforward solution might seem to be upgrading hardware, it isn't always feasible. Hence, the necessity to monitor and manage memory efficiently.
 
@@ -57,11 +57,13 @@ It allows us to sort by the task we're most interested in monitoring by pressing
 To install `htop` in your VM instance, you can use the following command:
 
 {{% codeblock %}}
+
 ```bash
 $ sudo apt install htop
 # or:
 $ sudo apt-get install htop
 ```
+
 {{% /codeblock %}}
 
 You can then run `htop` by simply typing `htop` in your terminal.
@@ -82,6 +84,7 @@ $ sudo apt install nvtop
 # or:
 $ sudo apt-get install nvtop
 ```
+
 {{% /codeblock %}}
 
 With `nvtop`, you can monitor GPU usage by typing `nvtop` into your terminal.
@@ -95,7 +98,7 @@ Overloading system memory can lead to unsaved data loss. Regularly save your wor
 
 {{% /warning %}}
 
-### Practical approaches 
+### Practical approaches
 
 There are several practical solutions to avoid running out of memory. These are some common strategies:
 
@@ -151,9 +154,9 @@ An illustration of creating a `DataLoader` for a text dataset, using a tokenizer
         for batch in dataloader:
             input_ids = batch['input_ids'].squeeze()
             attention_mask = batch['attention_mask'].squeeze()
-            
+
             output = bert_sc_pa(input_ids=input_ids, attention_mask=attention_mask)
-            
+
             scores = output.logits
             predicted_pa = torch.argmax(scores, dim=1).cpu().numpy()
             predictions_pa.extend(predicted_pa)
@@ -166,10 +169,10 @@ Adjusting the `batch_size` parameter balances memory usage against processing ti
 
 {{% /tip %}}
 
-- **Efficient Data Structures and Algorithms:** A wise choice in data structures and algorithm design can substantially cut down memory usage. The selection depends on your data's nature and your go-to operations. 
+- **Efficient Data Structures and Algorithms:** A wise choice in data structures and algorithm design can substantially cut down memory usage. The selection depends on your data's nature and your go-to operations.
 
 {{% example %}}
-Take hash tables as an example, they boast constant time complexity for search operations, becoming a superior option for substantial datasets. 
+Take hash tables as an example, they boast constant time complexity for search operations, becoming a superior option for substantial datasets.
 
 In Python, this translates to choosing dictionaries over lists when wrestling with large datasets:
 
@@ -182,14 +185,14 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 
 - **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine-learning models. For instance, instead of running three BERT models sequentially on one instance, distribute them across three instances.
 
-Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
+Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs.
 
 {{% summary %}}
 
 - **Memory Management:**
 
-    - Monitor with `htop` (CPU) and `nvtop` (GPU).
-    - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
+  - Monitor with `htop` (CPU) and `nvtop` (GPU).
+  - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
 
 {{% /summary %}}
 
