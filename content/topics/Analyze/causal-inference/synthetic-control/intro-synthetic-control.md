@@ -4,6 +4,7 @@ description: "This article provides an introduction to synthetic control methods
 keywords: "causal, inference, econometrics, model, treatment, effect, control, synthetic"
 draft: false
 weight: 1
+date: 2024-09-01T01:00:00+01:00
 author: "Virginia Mirabile"
 ---
 
