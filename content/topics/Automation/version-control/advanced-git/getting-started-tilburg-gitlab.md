@@ -2,7 +2,7 @@
 title: "Getting started with Tilburg's GitLab"
 description: ""
 keywords: "git, github, gitlab, continuous integration,continuous development, git flow"
-date: 2024-20-06
+date: 2024-06-20
 weight: 3
 author: "Krzysztof Wiesniakowski"
 authorlink: "https://tilburgsciencehub.com/contributors/krzysztofwiesniakowski/"
