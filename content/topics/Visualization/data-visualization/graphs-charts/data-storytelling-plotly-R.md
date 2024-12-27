@@ -2,7 +2,7 @@
 title: "Dynamic Data Storytelling with Plotly"
 description: "Exploration and guidance in the art of creating interactive, narrative-driven data visualizations by using Plotly in R"
 keywords: "data visualization, Plotly, R, interactive charts, dynamic storytelling, ggplot2, data analysis"
-date: 2023-23-12
+date: 2023-12-23
 weight: 8
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
