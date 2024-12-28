@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
+tutorialtitle: "Ways of contributing to Tilburg Science Hub"
 type: "contribute-to-tsh"
 title: "Learn How to Contribute"
 description: "Learn how to contribute to Tilburg Science Hub in three easy ways."
