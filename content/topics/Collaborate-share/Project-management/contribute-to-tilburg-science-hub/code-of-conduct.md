@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
+tutorialtitle: "Code of Conduct"
 type: "contribute-to-tsh"
 indexexclude: "true"
 title: "Contributor's Code of Conduct"

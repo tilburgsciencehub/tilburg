@@ -1,8 +1,8 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
+tutorialtitle: "Contribute using Pull Requests"
 type: "contribute-to-tsh"
 indexexclude: "true"
-title: "Contributing using Pull Requests"
+title: "Contribute using Pull Requests"
 description: "Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one."
 keywords: "template, pull, requests, contribute, github"
 weight: 1004
@@ -12,8 +12,6 @@ aliases:
 - /contribute/mode-3
 - /topics/more-tutorials/contribute-to-tilburg-science-hub/mode-2/
 - /topics/more-tutorials/contribute-to-tilburg-science-hub/mode-3/
-
-
 ---
 
 ## Contributing using Pull Requests
@@ -51,13 +49,13 @@ After having [set up your GitHub account](/topics/configure-your-computer/statis
 1. Fork the originating repository to your GitHub profile (press the "fork" button
 on GitHub, which creates a copy of this project in your own GitHub account).
 
-2. Within your version of the forked repository, move to the `tilburg-update` branch and create a **new branch for each significant change being made**.
+2. Within your version of the forked repository, create a **new branch for each significant change being made**.
 
 3. Navigate to the file(s) you wish to change within the new branches and make revisions as required.
 
 4. Commit all changed files within the appropriate branches.
 
-5. Create individual pull requests from each of your changed branches to the `tilburg-update` branch within the originating repository.
+5. Create individual pull requests from each of your changed branches to the `main-flask` branch within the originating repository.
 
 6. Maintainers and other contributors will review your pull request. When your pull request is approved, it will be merged into the upstream Tilburg Science Hub repo. If you receive feedback, make changes using your issue-specific branches of the forked repository and the pull requests will update automatically.
 
@@ -65,26 +63,16 @@ on GitHub, which creates a copy of this project in your own GitHub account).
 
 #### Host our site local to see your changes
 
-If you want to make changes to, for example, our templates, or you want to see how your changes will look on the site you have to run our site locally using Hugo. 
+If you want to make changes to, for example, our templates, or you want to see how your changes will look on the site you have to run our site locally using Flask. 
 
-1. Have Hugo installed. If you do not yet have Brew and Hugo installed follow [the tutorial Get Hugo](/topics/open-education/hugo-website/get-hugo/)
-
-2. Fork the originating repository to your GitHub profile (press the "fork" button
+1. Fork the originating repository to your GitHub profile (press the "fork" button
 on GitHub, which creates a copy of this project in your own GitHub account).
 
-3. Within your version of the forked repository, move to the `tilburg-update` branch and create a **new branch for each significant change being made**.
+2. Clone the repository using git clone https://github.com/{your_github_account}/website.git
 
-4. Navigate to the file(s) on your computer. This most easily done via GitHub desktop. 
+3. Follow the installation guidelines that are in README.md file in this repository (either using Docker or running by flask command). You can find there the exact commands to type in the command prompt to start running the website.
 
-5. Once you are in the folder type ``cmd`` in the address bar and press enter 
-
-6. In the Command Prompt type ``hugo server`` to make the website run local. A local host link will be given (http://localhost:xxxx). 
-
-![open Command Prompt and type hugo server](./images/open-cmd-and-hugo-server.jpg)
-
-7. Past the localhost link in your browser and the website will be shown with the changes you made.
-
-
+4. Within your version of the forked repository create a **new branch for each significant change being made**. Please note that since the website fetches the content from the database, in order to see your changes on the website you need to rerun `python content_to_db.py` script.
 
 ### If you want to write new content
 
@@ -93,12 +81,11 @@ on GitHub, which creates a copy of this project in your own GitHub account).
 2. Fork the originating repository to your GitHub profile (press the "fork" button
 on GitHub, which creates a copy of this project in your own GitHub account).
 
-3. Within your version of the forked repository, move to the `tilburg-update` branch and
-create a **new branch for each new topic you are writing about**.
+3. Clone the repository using git clone https://github.com/{your_github_account}/website.git
 
-4. Commit all the new Markdown files within the appropriate branches.
+4. Follow the installation guidelines that are in README.md file in this repository (either using Docker or running by flask command). You can find there the exact commands to type in the command prompt to start running the website.
 
-5. Create individual pull requests from each of your changed branches to the `tilburg-update` branch within the originating repository.
+5. Within your version of the forked repository create a **new branch for each significant change being made**. Please note that since the website fetches the content from the database, in order to see your changes on the website you need to rerun `python content_to_db.py` script.
 
 6. Maintainers and other contributors will review your pull request. When your pull request is approved, it will be merged into the upstream Tilburg Science Hub repo. If you receive feedback, make changes using your issue-specific branches of the forked repository and the pull requests will update automatically.
 
@@ -122,8 +109,6 @@ If you have written a new section which you wish to add to the website, make sur
 
   - Ideally you would place it for instance, just after "The Most Important Git Commands You Should Know". This way, when going through the tutorials, the new content would come in a more natural order.
 {{% /example%}}
-
-
 
 
 **How to choose the order of sections?**

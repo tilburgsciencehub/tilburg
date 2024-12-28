@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
+tutorialtitle: "Add yourself as a Contributor"
 type: "contribute-to-tsh"
 indexexclude: "true"
 title: "Add Yourself As Contributor"
