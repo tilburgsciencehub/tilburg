@@ -4,6 +4,7 @@ description: "Remake - tool to debug makefiles"
 keywords: "make, remake, debugging, makefile, automation, recipes, workflow, workflow management, script debugging, automated pipelines, GNU Make"
 draft: false
 weight: 2
+date: 2020-11-11T22:02:51+05:30
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:

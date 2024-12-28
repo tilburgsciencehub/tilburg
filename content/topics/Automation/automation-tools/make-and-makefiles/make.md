@@ -2,8 +2,8 @@
 title: "Set up Make"
 description: "Learn how to install make on windows, mac, and Linux. Use make to automate the execution of projects, and see how to check if make is installed correctly"
 keywords: "make, build, build tool, install, set up, windows"
-#weight: 2
-#date: 2020-11-11T22:02:51+05:30
+weight: 2
+date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /get/make

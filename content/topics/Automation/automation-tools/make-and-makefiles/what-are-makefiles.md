@@ -3,7 +3,8 @@ title: "Use Makefiles to Manage, Automate, and Reproduce Projects"
 description: "Learn how to use makefiles to establish defined protocols and strategies for your computational workflows."
 weight: 1
 keywords: "make, makefile, automation, recipes, workflow, pipeline, dependencies, targets, reproducible research"
-#date: 2021-01-06T22:01:14+05:30 #updated:2023-08-18
+date: 2021-01-06T22:01:14+05:30 
+updated: 2023-08-18
 aliases:
   - /learn/makefiles
   - /use/makefiles

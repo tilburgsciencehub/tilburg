@@ -1,6 +1,6 @@
 ---
 draft: false
 title: "Make and Makefiles"
-weight: 1
+weight: 2
 type: subcategory
 ---
