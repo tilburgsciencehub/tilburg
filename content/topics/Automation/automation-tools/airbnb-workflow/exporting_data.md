@@ -1,16 +1,16 @@
 ---
-# tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
+title: "Exporting the Data"
 type: "airbnb-workflow"
 indexexclude: "true"
 weight: 40
-title: "Exporting the Data"
+description: "Exporting and exploring the data"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+keywords: "exporting, data, plot"
 ---
 
 # Exporting Data
 Finally, it's time to turn our generated files into plots which we can use for our analysis. First, we create the R scripts to create the plots. Second, we automate the entire pipeline using `make`.
-
 
 **plot_all.R**  
 A time-series plot that shows the total number of reviews over time (across all neighborhoods). Add a plot title and axes labels to make your graph easier to read. Store it as `plot_all.pdf` in `gen/plots` (don't forget to add a `plots` folder in `gen`!).

@@ -1,5 +1,4 @@
 ---
-# tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
 type: "airbnb-workflow"
 title: "Overview"
 description: "Set up an end-to-end workflow to investigate the impact of COVID-19 on AirBnB bookings"

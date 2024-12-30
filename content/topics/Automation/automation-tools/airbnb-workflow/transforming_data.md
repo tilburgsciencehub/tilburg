@@ -1,16 +1,16 @@
 ---
-# tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
+title: "Transforming the Data"
 type: "airbnb-workflow"
 indexexclude: "true"
 weight: 30
-title: "Transforming the Data"
 date: 2021-01-06T22:01:14+05:30
+description: "Transforming the data and exercising"
 draft: false
+keywords: "features, preprocessing"
 ---
 
 # Transforming Data
 ## Feature Definition
-
 As the author of Inside Airbnb notes, guests may leave a review after their stay, and these can be used as an indicator for the number of bookings. Although only verified guests can review listings, it is unlikely that every guest will take the time to write one. In reality, the number of bookings will thus exceed the number of reviews.
 
 **Exercise**  
@@ -32,6 +32,7 @@ In other words, the likelihood of getting a review may not be uniform across all
 
 Create a file `clean.R` that loads the data from the `data` directory and reshapes the data into the following format:
 
+{{%table%}}
 ---
 | date | neighbourhood | num_reviews |
 | :---- | :---- | :---- |
@@ -39,8 +40,8 @@ Create a file `clean.R` that loads the data from the `data` directory and reshap
 | 2015-02-01 | Bijlmer-Centrum | 94 |
 | ... | ... | .... |
 | 2020-12-01 | Zuid | 23 |      
-
 ---
+{{%/table%}}
 
 Please adhere to the step-by-step guidelines below:  
 
@@ -51,11 +52,11 @@ Please adhere to the step-by-step guidelines below:
 * Group the number of reviews by date and neighborhood (aggregated on a monthly level).
 * Store the final data frames in `gen/data-preparation` as `aggregated_df.csv`.
 
-
 ## Reshaping Data
 
 If we want to compare neighbourhoods side by side (e.g., Centrum-West vs De Pijp) in, for example, a plot we need to transform the data from a *long* format into a *wide* format. More specifically, we are after a data structure in which the horizontal column headers are the neighbourhoods and the rows the dates:
 
+{{%table%}}
 ---
 | date | Bijlmer-Centrum | Bijlmer-Oost | ... | Zuid |
 | :--- | :--- |:--- |:--- | :--- |
@@ -64,6 +65,6 @@ If we want to compare neighbourhoods side by side (e.g., Centrum-West vs De Pijp
 | ... | ... | ... | ... | ... |
 | 2020-12-01 | ... | ... | ... | ... |
 ---
-
+{{%/table}}
 
 Import the data from `gen/data-preparation/aggregated_df.csv`, reshape the data into wide format and store the result as `pivot_table.csv` in `gen/data-preparation`.

@@ -1,11 +1,12 @@
 ---
-# tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
+title: "Conclusion"
 type: "airbnb-workflow"
 indexexclude: "true"
 weight: 60
-title: "Conclusion"
+description: "Concluiosn of airbnb-workflow tutorial"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+keywords: "research question, conclusion"
 ---
 
 # Conclusion
