@@ -13,4 +13,4 @@ services:
         max-size: "10m"
         max-file: "3"
     labels:
-      - "traefik.http.routers.frontend.rule=Host(`flask.tilburgsciencehub.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`tilburgsciencehub.com`)"
