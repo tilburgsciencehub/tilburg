@@ -1,11 +1,12 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 6
 title: "Dry-run of Make and First Modifications"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+keywords: "modifications, data preparation"
 aliases:
   - /dry-run/pipeline-automation
   - /topics/reproducible-research/practicing-pipeline-automation-make/wipe-rerun
@@ -19,7 +20,6 @@ supports so-called "dry-runs", which you can initiate by typing `make -n` (for N
 **Watch our video to understand the intuition of dry-runs.**
 
 {{< youtube h7f9bHnOLm0 iframe-video-margins >}}
-
 
 Next, you will start to modify the scripts in this template. After all, you're working on a *template* that you're ultimately interested in *modifying* (e.g., putting in your own data). For each (major) modification, you need to test whether your changes to the source code were done correctly (i.e., that they didn't break the template). Read how in the box below.
 

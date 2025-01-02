@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 title: "Pipeline Automation Overview"
 description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."

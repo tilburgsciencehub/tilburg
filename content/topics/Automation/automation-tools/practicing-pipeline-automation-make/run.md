@@ -1,9 +1,10 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 4
 title: "Running the Workflow"
+keywords: "workflow, practice"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:

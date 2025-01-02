@@ -1,9 +1,10 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 7
 title: "More Modifications"
+keywords: "modifications, branching"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:

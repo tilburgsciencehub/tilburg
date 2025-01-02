@@ -1,5 +1,4 @@
 import random
-
 from sqlalchemy.sql.expression import func
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords

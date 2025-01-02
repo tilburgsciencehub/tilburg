@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 8
@@ -9,6 +9,7 @@ draft: false
 aliases:
   - /analyze/pipeline-automation
   - /topics/reproducible-research/practicing-pipeline-automation-make/analysis
+keywords: "analysis, practice"
 ---
 
 ## Let's modify the analysis

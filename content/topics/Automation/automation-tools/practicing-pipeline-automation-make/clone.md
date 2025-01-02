@@ -1,12 +1,14 @@
 ---
-tutorialtitle: "Practicing Pipeline Automation using Make"
+# tutorialtitle: "Practicing Pipeline Automation using Make"
 type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 3
 title: "Download the Template"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+keywords: "template, practice"
 aliases:
+
   - /download/pipeline-automation
   - /topics/reproducible-research/practicing-pipeline-automation-make/clone
 ---
