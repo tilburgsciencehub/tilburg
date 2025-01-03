@@ -45,7 +45,7 @@
         {% for contributor in contributors_list %}
             {% if contributor.status == 'alumni' %}
             <div class="col-xl-6 col-lg-6 col-md-12 col-22 mb-4 d-flex flex-wrap">
-            <a style="color:inherit" href="#">
+            <a style="color:inherit" href="{{ url_for('contributors') }}/{{ contributor.path }}">
                 <div class="p-5 text-center w-100 rounded d-flex flex-column">
                 <span class="flex-fill">
                     <div class="image-circle-overview">
