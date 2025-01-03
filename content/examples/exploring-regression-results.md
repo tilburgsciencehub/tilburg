@@ -52,7 +52,7 @@ autoplot(
 
 *Output:*
 
-![model-evaluation](../images/model_evaluation.png)
+![model-evaluation](./images/model_evaluation.png)
 
 ---
 
@@ -75,7 +75,7 @@ leverage_influence <- mdl_cars %>%
 
 
 *Output:*
-
+{{%table%}}
 | `speed_kmh` | `dist_m` | `leverage` | `cooks_dist` |
 | :--- | :--- | :--- | :--- |
 | 38.6  | 36.6  | 0.0740  | 0.340   |
@@ -84,7 +84,7 @@ leverage_influence <- mdl_cars %>%
 | 37.0  | 16.5 | 0.0622 | 0.0532 |
 | 29.0 | 25.6  | 0.0249  | 0.0526  |
 | 38.6 | 28.3 | 0.0740 | 0.0479  |
-
+{{%/table%}}
 ---
 
 ### 3. Model Reporting
@@ -111,7 +111,7 @@ stargazer(mdl_cars, mdl_cars_cleaned,
 
 *Output:*
 
-![stargazer](../images/stargazer.png)
+![stargazer](./images/stargazer.png)
 
 ---
 
@@ -160,8 +160,10 @@ prediction_data <- explanatory_data %>%
 
 *Output:*
 
+{{%table%}}
 | `speed_kmh` | `dist_m` |
 | :---- | :---- |
 | 45  | 28.15682  |  
 | 50  | 31.88070  |
 | 60  | 39.32847  |
+{{%/table%}}
