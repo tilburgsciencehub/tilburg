@@ -40,7 +40,7 @@ db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), db_filename))
 db_uri = f'sqlite:///{db_path}'  
 
 # Root URL
-base_url = 'https://flask.tilburgsciencehub.com'
+base_url = 'https://tilburgsciencehub.com'
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
@@ -147,7 +147,7 @@ def topics_list():
 @app.route('/topics/<first_level_topic_path>/')
 def topics_first_level(first_level_topic_path):
     
-    
+
     return render_template('first-level-topic.html', assets=assets, topic_path=first_level_topic_path)
 
 # Still needs metadata!

@@ -1,4 +1,4 @@
 class Config:
-    DOMAIN = 'https://flask.tilburgsciencehub.com/'
-    SITE_NAME = 'Tilburg Science Hub Flask'
+    DOMAIN = 'https://tilburgsciencehub.com/'
+    SITE_NAME = 'Tilburg Science Hub'
     AUTHOR = 'Tilburg Science Hub'
